@@ -403,14 +403,38 @@ public:
 
 class PersonThree {
 public:
-    PersonThree() = default;
+    PersonThree() {
+        cout << "PersonThree构造函数" << endl;
+    };
+
     void show_str() {
-        cout << "PersonThree" << endl;
+        cout << "执行打印方法" << endl;
+    }
+    ~PersonThree() {
+        cout << "PersonThree析构函数" << endl;
     }
 };
 // 针对PersonThree的智能指针
 class SmartPoint {
-
+public:
+    SmartPoint(PersonThree* person) {
+        cout << "SmartPoint构造函数" << endl;
+        s_person = person;
+    }
+    PersonThree* operator->() const {
+        return this->s_person;
+    }
+    PersonThree& operator*() const {
+        return *this->s_person;
+    }
+    ~SmartPoint() {
+        cout << "SmartPoint析构函数" << endl;
+        if (this->s_person != nullptr) {
+            delete this->s_person;
+            this->s_person = nullptr;
+        }
+    }
+    PersonThree* s_person;
 
 };
 

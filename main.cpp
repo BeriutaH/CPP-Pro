@@ -860,15 +860,9 @@ int main() {
                 // // 匿名对象调用
                 // cout << "结果: " << MyAdd()(5, 3) << endl;
             // 指针运算符重载 智能指针: 托管new出来的对象，不用再写delete
-    cout << "__cplusplus value: " << __cplusplus << endl;
-
-
-
-
-
-
-
-
+            SmartPoint sp(new PersonThree);
+            sp->show_str();
+            (*sp).show_str();
 
 
 

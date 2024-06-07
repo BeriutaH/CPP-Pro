@@ -1,0 +1,3 @@
+/Users/bariuta/CLionProjects/CppNew/cmake-build-debug/CMakeFiles/CppNew.dir
+/Users/bariuta/CLionProjects/CppNew/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/bariuta/CLionProjects/CppNew/cmake-build-debug/CMakeFiles/rebuild_cache.dir

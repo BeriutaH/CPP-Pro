@@ -379,7 +379,7 @@ public:
 
 class PersonNewTwo {
 public:
-    PersonNewTwo(string name, int age): p_name(name), p_age(age) {}
+    PersonNewTwo(string name, int age): p_name(std::move(name)), p_age(age) {}
 
     // 重载运算符 ==
     bool operator==(const PersonNewTwo& p) const {
@@ -417,7 +417,7 @@ public:
 // 针对PersonThree的智能指针
 class SmartPoint {
 public:
-    SmartPoint(PersonThree* person) {
+    explicit SmartPoint(PersonThree* person) {
         cout << "SmartPoint构造函数" << endl;
         s_person = person;
     }
@@ -435,9 +435,135 @@ public:
         }
     }
     PersonThree* s_person;
-
 };
 
+class BasePage {
+public:
+    void header() {
+        cout << "统一的头部" << endl;
+    }
+    void left() {
+        cout << "统一的左部" << endl;
+    }
+};
+class Go: public BasePage {
+public:
+    void content() {
+        cout << "Go 模块的内容" << endl;
+    }
+};
+class Python: public BasePage {
+public:
+    void content() {
+        cout << "Python 模块的内容" << endl;
+    }
+};
+class Cpp: public BasePage {
+public:
+    void content() {
+        cout << "Cpp 模块的内容" << endl;
+    }
+};
+
+class Base {
+public:
+    int b_a;
+protected:
+    int b_b;
+private:
+    int b_c;
+};
+// 公共继承
+class SonOne: public Base {
+public:
+    void foo() {
+        b_a = 10;
+        b_b = 12;   // 类外访问不到
+        // b_c = 23;  // 无法访问
+    }
+};
+// 保护继承
+class SonTwo: protected Base {
+public:
+    void foo() {
+        b_a = 100;  // 类外访问不到,父类公共成员也变为保护权限
+        b_b = 120;  // 类外访问不到
+        // b_c = 23;  // 无法访问
+    }
+};
+// 私有继承
+class SonThree: private Base {
+public:
+    void foo() {
+        b_a = 100;  // 类外访问不到,父类公共成员也变为私有权限
+        b_b = 120;  // 类外访问不到,父类公共成员也变为私有权限
+        // b_c = 23;  // 无法访问
+    }
+};
+class BaseOne {
+public:
+    BaseOne() {
+        b_a = 100;
+    }
+    void foo() {
+        cout << "Base中的foo方法" << endl;
+    }
+    int b_a;
+};
+class SonFour: public BaseOne {
+public:
+    SonFour() {
+        b_a = 200;
+    }
+    void foo() {
+        cout << "Son中的foo方法" << endl;
+    }
+    int b_a;
+};
+class A {
+public:
+    A() {
+        num = 233;
+    }
+    int num;
+};
+class B {
+public:
+    B() {
+        num = 454;
+    }
+    int num;
+};
+// 多继承
+class C: public A, public B {
+public:
+    C() {
+        cout << "C构造函数" << endl;
+    }
+};
+
+class BaseAnimal {
+public:
+    // 定义虚函数
+    virtual void speak() {
+        cout << "动物在说话" << endl;
+    }
+};
+class Cat: public BaseAnimal{
+public:
+    void speak() {
+        cout << "猫在说话" << endl;
+    }
+};
+class Dog: public BaseAnimal {
+public:
+    void speak() {
+        cout << "狗在说话" << endl;
+    }
+};
+void do_speak(BaseAnimal& animal) {
+    animal.speak();
+}
 #endif
 
 

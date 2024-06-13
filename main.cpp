@@ -854,15 +854,79 @@ int main() {
                 //     cout << "两个对象相同" << endl;
                 // }
             // 函数调用运算符重载 () 仿函数
-                // MyAdd add;
-                // int ret = add(1,3);
-                // cout << "结果: " << ret << endl;
+                 // MyAdd add;
+                 // int ret = add(1,3);
+                 // cout << "结果: " << ret << endl;
                 // // 匿名对象调用
                 // cout << "结果: " << MyAdd()(5, 3) << endl;
             // 指针运算符重载 智能指针: 托管new出来的对象，不用再写delete
-            SmartPoint sp(new PersonThree);
-            sp->show_str();
-            (*sp).show_str();
+                 // SmartPoint sp(new PersonThree);
+                 // sp->show_str();
+                 // (*sp).show_str();
+    // 继承
+        // 优点
+            // 继承是面向对象的三大特性之一
+            // 减少重复代码
+            // 语法: class 子类: 继承方式 父类
+            // 子类也称为 派生类，父类也称为 基类
+        // 继承方式
+            // 公共继承
+                // Python py;
+                // py.header();
+                // py.left();
+                // py.content();
+                // cout << "===========================================" << endl;
+                // Go go;
+                // go.header();
+                // go.left();
+                // go.content();
+                // cout << "===========================================" << endl;
+                // Cpp cpp;
+                // cpp.header();
+                // cpp.left();
+                // cpp.content();
+            // 保护继承
+                // SonTwo son2;
+                // son2.b_a;  // 访问不到
+            // 私有继承
+                 // SonThree son3;
+                 // son3.b_a;  // 访问不到
+        // 继承对象模型
+            // 子类继承父类，父类所有废静态成员属性都会被子类继承下去，父类中的私有成员属性也继承了，是被编译器给隐藏了，因此访问不到
+        // 继承父类调用父类的方法静态跟非静态一样
+            // 如果子类中出现和父类同名的成员函数，父类中所有同名的成员函数都会被隐藏，如果想要访问，需要加作用域
+                // SonFour son4;
+                // cout << "son4 里的 b_a: " << son4.b_a << endl;
+                // cout << "base4 里的 b_a: " << son4.BaseOne::b_a << endl;  // 如果通过子类对象访问父类中的同名成员，需要加作用域
+                // son4.foo();
+                // son4.BaseOne::foo();  // 调用父类同名成员函数
+        // 多继承语法(不建议多继承)
+            // 多继承语法: class C: public A, public B
+            // C c;
+            // cout << "A中的num: " << c.A::num << endl;
+            // cout << "B中的num: " << c.B::num << endl;
+        // 菱形继承: 利用虚继承解决菱形继承的问题 virtual 关键字
+            // 语法: class C: virtual public A {}
+    // 多态
+        // 概念类型
+            // 静态多态：函数重载和运算符重载，复用函数名
+            // 动态多态：派生类和虚函数实现运行时多态
+        // 区别
+            // 静态多态的函数地址早绑定，编译阶段确定函数地址
+            // 动态多态的函数地址晚绑定，运行阶段确定函数地址
+        // 动态多态满足条件
+            // 有继承关系
+            // 子类重写父类的虚函数
+        // 动态多态使用
+            // 父类的指针或者引用指向子类对象
+            Cat cat;
+            do_speak(cat);
+            Dog dog;
+            do_speak(dog);
+
+
+
+
 
 
 

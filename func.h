@@ -4,9 +4,9 @@
 
 #ifndef CPPPR_FUNC_H
 #define CPPPR_FUNC_H
-#include <iostream>
-#include <climits>
-#include <cstring>
+//#include <iostream>
+//#include <climits>
+//#include <cstring>
 
 /* 当前文件放置课程涉及到的所有函数 */
 
@@ -551,13 +551,14 @@ public:
 };
 class Cat: public BaseAnimal{
 public:
-    void speak() {
+    // override 关键字 在派生类中重写基类的虚函数时使用
+    void speak() override {
         cout << "猫在说话" << endl;
     }
 };
 class Dog: public BaseAnimal {
 public:
-    void speak() {
+    void speak() override {
         cout << "狗在说话" << endl;
     }
 };

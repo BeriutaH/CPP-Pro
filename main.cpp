@@ -1,12 +1,15 @@
-#include <iostream>
-using namespace std;
-#include <algorithm>  // 包含 std::for_each
-#include <iterator>   // 包含 std::begin 和 std::end
-#include <string>
-#include <numeric>
-#include <map>
+//#include <iostream>
+//using namespace std;
+//#include <algorithm>  // 包含 std::for_each
+//#include <iterator>   // 包含 std::begin 和 std::end
+//#include <string>
+//#include <numeric>
+//#include <map>
 #include "user.h"
 #include "func.h"
+#include "apps/my_str/projects.h"
+#include "apps/calculator/calculator.h"
+#include "apps/pub/drinks.h"
 
 int number = 9;
 
@@ -863,6 +866,20 @@ int main() {
                  // SmartPoint sp(new PersonThree);
                  // sp->show_str();
                  // (*sp).show_str();
+        // 运算符案例
+            // MyString ms1 = "hi my teacher! ";
+            // MyString ms2 = "hi my teacher!";
+            // cout << "输入ms2内容" << endl;
+            // cin >> ms2;
+            // MyString ms3 = ms1 + "wewe";
+            // cout << "ms3内容: " << ms3 << endl;
+            // MyString ms4 = ms1 + ms2;
+            // cout << "ms4内容: " << ms4 << endl;
+            // MyString ms5 = ms3;
+            // cout << "ms5内容: " << ms5 << endl;
+            // MyString ms6 = "测试代码";
+            // cout << "ms6内容: " << ms6 << endl;
+
     // 继承
         // 优点
             // 继承是面向对象的三大特性之一
@@ -919,10 +936,39 @@ int main() {
             // 子类重写父类的虚函数
         // 动态多态使用
             // 父类的指针或者引用指向子类对象
-            Cat cat;
-            do_speak(cat);
-            Dog dog;
-            do_speak(dog);
+                // Cat cat;
+                // do_speak(cat);
+                // Dog dog;
+                // do_speak(dog);
+            // 计算器案例
+                  // AbstractCalculator* abs = new AddCalculator(200, 10);
+                  // cout << abs->c_num1 << " + " << abs->c_num2 << " = " << abs->get_result() << endl;
+                  // delete abs;  // delete 只是释放指针所指向的内存，但指针本身仍然持有该内存地址。因此，指针仍然是一个有效的地址，尽管它指向的内存不再属于你
+                  // abs = new SubCalculator;
+                  // abs->c_num1 = 200;
+                  // abs->c_num2 = 10;
+                  // cout << abs->c_num1 << " - " << abs->c_num2 << " = " << abs->get_result() << endl;
+                  // delete abs;
+                  // abs = new MultiplicationCalculator(200, 10);
+                  // cout << abs->c_num1 << " * " << abs->c_num2 << " = " << abs->get_result() << endl;
+                  // delete abs;
+        // 纯虚函数和抽象类
+            // 当类中有了纯虚函数，这个类也称为抽象类
+            // 抽象类特点
+                // 无法实例化对象
+                // 子类必须重写抽象类中的虚函数，否则也属于抽象类
+            // 制作饮品案例
+                // do_work(new Coffee);
+                // cout << "-----------------------" << endl;
+                // do_work(new Tea);
+        // 虚析构和纯虚析构
+            // 可以解决父类指针释放子类对象
+            // 都需要有具体的函数实现
+
+
+
+
+
 
 
 

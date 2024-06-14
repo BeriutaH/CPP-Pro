@@ -49,11 +49,40 @@ cmake_ninja_workdir = /Users/bariuta/CLionProjects/CppNew/cmake-build-debug/
 
 build cmake_object_order_depends_target_CppNew: phony || CMakeFiles/CppNew.dir
 
-build CMakeFiles/CppNew.dir/main.cpp.o: CXX_COMPILER__CppNew_unscanned_Debug /Users/bariuta/CLionProjects/CppNew/main.cpp || cmake_object_order_depends_target_CppNew
-  DEP_FILE = CMakeFiles/CppNew.dir/main.cpp.o.d
-  FLAGS = -g -std=gnu++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -mmacosx-version-min=14.0 -fcolor-diagnostics
+build CMakeFiles/CppNew.dir/cmake_pch_arm64.hxx.pch: CXX_COMPILER__CppNew_unscanned_Debug /Users/bariuta/CLionProjects/CppNew/cmake-build-debug/CMakeFiles/CppNew.dir/cmake_pch_arm64.hxx.cxx | CMakeFiles/CppNew.dir/cmake_pch_arm64.hxx || cmake_object_order_depends_target_CppNew
+  DEP_FILE = CMakeFiles/CppNew.dir/cmake_pch_arm64.hxx.pch.d
+  FLAGS = -g -std=gnu++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -mmacosx-version-min=14.0 -fcolor-diagnostics -Winvalid-pch -Xclang -emit-pch -Xclang -include -Xclang /Users/bariuta/CLionProjects/CppNew/cmake-build-debug/CMakeFiles/CppNew.dir/cmake_pch_arm64.hxx -x c++-header
+  INCLUDES = -I/Users/bariuta/CLionProjects/CppNew/apps
   OBJECT_DIR = CMakeFiles/CppNew.dir
   OBJECT_FILE_DIR = CMakeFiles/CppNew.dir
+
+build CMakeFiles/CppNew.dir/main.cpp.o: CXX_COMPILER__CppNew_unscanned_Debug /Users/bariuta/CLionProjects/CppNew/main.cpp | CMakeFiles/CppNew.dir/cmake_pch_arm64.hxx CMakeFiles/CppNew.dir/cmake_pch_arm64.hxx.pch || cmake_object_order_depends_target_CppNew
+  DEP_FILE = CMakeFiles/CppNew.dir/main.cpp.o.d
+  FLAGS = -g -std=gnu++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -mmacosx-version-min=14.0 -fcolor-diagnostics -Winvalid-pch -Xarch_arm64 -include/Users/bariuta/CLionProjects/CppNew/cmake-build-debug/CMakeFiles/CppNew.dir/cmake_pch_arm64.hxx
+  INCLUDES = -I/Users/bariuta/CLionProjects/CppNew/apps
+  OBJECT_DIR = CMakeFiles/CppNew.dir
+  OBJECT_FILE_DIR = CMakeFiles/CppNew.dir
+
+build CMakeFiles/CppNew.dir/apps/my_str/projects.cpp.o: CXX_COMPILER__CppNew_unscanned_Debug /Users/bariuta/CLionProjects/CppNew/apps/my_str/projects.cpp | CMakeFiles/CppNew.dir/cmake_pch_arm64.hxx CMakeFiles/CppNew.dir/cmake_pch_arm64.hxx.pch || cmake_object_order_depends_target_CppNew
+  DEP_FILE = CMakeFiles/CppNew.dir/apps/my_str/projects.cpp.o.d
+  FLAGS = -g -std=gnu++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -mmacosx-version-min=14.0 -fcolor-diagnostics -Winvalid-pch -Xarch_arm64 -include/Users/bariuta/CLionProjects/CppNew/cmake-build-debug/CMakeFiles/CppNew.dir/cmake_pch_arm64.hxx
+  INCLUDES = -I/Users/bariuta/CLionProjects/CppNew/apps
+  OBJECT_DIR = CMakeFiles/CppNew.dir
+  OBJECT_FILE_DIR = CMakeFiles/CppNew.dir/apps/my_str
+
+build CMakeFiles/CppNew.dir/apps/calculator/calculator.cpp.o: CXX_COMPILER__CppNew_unscanned_Debug /Users/bariuta/CLionProjects/CppNew/apps/calculator/calculator.cpp | CMakeFiles/CppNew.dir/cmake_pch_arm64.hxx CMakeFiles/CppNew.dir/cmake_pch_arm64.hxx.pch || cmake_object_order_depends_target_CppNew
+  DEP_FILE = CMakeFiles/CppNew.dir/apps/calculator/calculator.cpp.o.d
+  FLAGS = -g -std=gnu++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -mmacosx-version-min=14.0 -fcolor-diagnostics -Winvalid-pch -Xarch_arm64 -include/Users/bariuta/CLionProjects/CppNew/cmake-build-debug/CMakeFiles/CppNew.dir/cmake_pch_arm64.hxx
+  INCLUDES = -I/Users/bariuta/CLionProjects/CppNew/apps
+  OBJECT_DIR = CMakeFiles/CppNew.dir
+  OBJECT_FILE_DIR = CMakeFiles/CppNew.dir/apps/calculator
+
+build CMakeFiles/CppNew.dir/apps/pub/drinks.cpp.o: CXX_COMPILER__CppNew_unscanned_Debug /Users/bariuta/CLionProjects/CppNew/apps/pub/drinks.cpp | CMakeFiles/CppNew.dir/cmake_pch_arm64.hxx CMakeFiles/CppNew.dir/cmake_pch_arm64.hxx.pch || cmake_object_order_depends_target_CppNew
+  DEP_FILE = CMakeFiles/CppNew.dir/apps/pub/drinks.cpp.o.d
+  FLAGS = -g -std=gnu++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -mmacosx-version-min=14.0 -fcolor-diagnostics -Winvalid-pch -Xarch_arm64 -include/Users/bariuta/CLionProjects/CppNew/cmake-build-debug/CMakeFiles/CppNew.dir/cmake_pch_arm64.hxx
+  INCLUDES = -I/Users/bariuta/CLionProjects/CppNew/apps
+  OBJECT_DIR = CMakeFiles/CppNew.dir
+  OBJECT_FILE_DIR = CMakeFiles/CppNew.dir/apps/pub
 
 
 # =============================================================================
@@ -63,7 +92,7 @@ build CMakeFiles/CppNew.dir/main.cpp.o: CXX_COMPILER__CppNew_unscanned_Debug /Us
 #############################################
 # Link the executable CppNew
 
-build CppNew: CXX_EXECUTABLE_LINKER__CppNew_Debug CMakeFiles/CppNew.dir/main.cpp.o
+build CppNew: CXX_EXECUTABLE_LINKER__CppNew_Debug CMakeFiles/CppNew.dir/main.cpp.o CMakeFiles/CppNew.dir/apps/my_str/projects.cpp.o CMakeFiles/CppNew.dir/apps/calculator/calculator.cpp.o CMakeFiles/CppNew.dir/apps/pub/drinks.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -mmacosx-version-min=14.0
   OBJECT_DIR = CMakeFiles/CppNew.dir
   POST_BUILD = :
